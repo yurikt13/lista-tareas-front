@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+}
+
+.container-app {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+
+
+.container-title-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.container-menu {
+    padding: 20px;
+    background-color: #EBEAEA;
+}
+
+.container-icon-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-menu {
+    font-size: 20px;
+    color: gray;
+    font-weight: bold;
+}
+
+.container-task-menu {
+    margin-top: 60%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.container-icon-task-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-item-menu {
+    font-size: 20px;
+}
+
+.icon-task-menu {
+    
+    font-size: 20px;
+    margin: 5px;
+}
+
+.container-home {
+    margin-left: 10px;
+    padding: 20px;
+}
+
+.container-task {
+    margin-top: 50px;
+    width: 90%;
+}
+
+.container-create-task {
+    width: 94%;
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border: solid #EBEAEA ;
+    background-color: #EBEAEA;
+    display: flex;
+}
+
+.input-create-task {
+    background-color: #EBEAEA;
+    border: none;
+    width: 98%;
+    outline: none;
+}
+
+.container-icon-create-task {
+    
+    background-color: white;
+    border-radius: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-create-task {
+    font-size: 30px;
+    color: rgb(104, 104, 104);
+    padding: 3px;
+}
+
+.task {
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    background-color: #EBEAEA;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-icon-task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-task {
+    font-size: 20px;
+    color: green;
+}
