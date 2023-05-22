@@ -2,6 +2,65 @@ body {
     margin: 0;
 }
 
+.fijar {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.modal {
+    position: absolute;
+    background-color: rgb(0 0 0 / 0.92);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .cerrar-modal {
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+.modal .cerrar-modal img {
+    width: 100%;
+}
+
+.campo {
+    margin-bottom: 1rem;
+    width: 70%;
+}
+
+.input-crear-tarea, .select-crear-tarea{
+    width: 100%;
+    border: solid #EBEAEA;
+    background-color: #EBEAEA;
+    display: flex;
+    outline: none;
+    border:none;
+
+}
+
+
+.form-task {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: white;
+    height: 90%;
+    width: 50%;
+    padding: 5px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
 .container-app {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
@@ -51,7 +110,7 @@ body {
 }
 
 .icon-task-menu {
-    
+
     font-size: 20px;
     margin: 5px;
 }
@@ -67,26 +126,29 @@ body {
 }
 
 .container-create-task {
-    width: 94%;
+    width: 93%;
     margin-bottom: 20px;
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 10px;
-    border: solid #EBEAEA ;
+    border: solid #EBEAEA;
     background-color: #EBEAEA;
     display: flex;
 }
 
 .input-create-task {
-    background-color: #EBEAEA;
+    background-color: white;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 17px;
     border: none;
-    width: 98%;
+    border-radius: 10px;
+    width: 97%;
     outline: none;
 }
 
 .container-icon-create-task {
-    
     background-color: white;
     border-radius: 80%;
     display: flex;
@@ -95,10 +157,19 @@ body {
 }
 
 .icon-create-task {
-    font-size: 30px;
+    font-size: 32px;
     color: rgb(104, 104, 104);
-    padding: 3px;
+    padding: 4px;
 }
+
+.icon-create-task:hover {
+    color: rgb(47, 47, 47);
+}
+
+.container-icon-create-task:hover {
+    border: solid 1px black;
+}
+
 
 .task {
     margin-bottom: 20px;
@@ -117,7 +188,12 @@ body {
     align-items: center;
 }
 
-.icon-task {
+.icon-task-true {
     font-size: 20px;
     color: green;
+}
+
+.icon-task-false {
+    font-size: 20px;
+    color: red;
 }
