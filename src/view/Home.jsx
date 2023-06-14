@@ -27,32 +27,34 @@ const Home = () => {
 
     return (
         <div className="container-home">
-            <h1>Today</h1>
+            <div>
+                <h1>Today</h1>
+            </div>
             <div className="container-task">
                 <div className="container-create-task">
                     <input className="input-create-task" placeholder="Escribe una tarea" value={tarea} onChange={e => setTarea(e.target.value)} />
                     <div className="container-icon-create-task">
                         <AiOutlinePlus className="icon-create-task" onClick={() => handleCrearTarea()} />
                     </div>
-                    <div>
 
-                    </div>
                 </div>
-                {data.tasks && data.tasks.map((task) =>
-                    <div className="task">
-                        <p className="title-task">{task.name}</p>
-                        <div className="container-icon-task">
-                            <GrStatusGoodSmall className={`icon-task-${task.status}`} />
+                <div className="container-create-task-list">
+                    {data.tasks && data.tasks.map((task) =>
+                        <div className="container-create-task">
+                            <p className="title-task">{task.name}</p>
+                            <div className="container-icon-task">
+                                <GrStatusGoodSmall className={`icon-task-${task.status}`} />
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
 
-                {modal && <CreateTask
-                    setModal={setModal}
-                    tarea={tarea}
-                    setTarea={setTarea}
+                    {modal && <CreateTask
+                        setModal={setModal}
+                        tarea={tarea}
+                        setTarea={setTarea}
 
-                />}
+                    />}
+                </div>
             </div>
         </div>
     )

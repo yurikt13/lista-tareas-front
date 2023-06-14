@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react"
 import ReactDOM from "react-dom"
 import cerrarModal from "./img/cerrar.svg"
+import MessageError from "./messageError"
 
 const createTask = ({ setModal, tarea, setTarea }) => {
 
   const [estado, setEstado] = useState('');
+  const [error, setError] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault();
-    if ([tarea, estado].includes('')) {
-      alert('Todos los campos son obligatorios')
+    if (estado.includes != '') {
+      setError(true)
+    } else {
+      setError(false)
     }
 
-    console.log(tarea, estado)
   }
 
   return ReactDOM.createPortal(
@@ -20,10 +23,18 @@ const createTask = ({ setModal, tarea, setTarea }) => {
       <div className="cerrar-modal">
         <img
           src={cerrarModal}
+          onClick={() => setModal(false)}
         ></img>
       </div>
       <form onSubmit={handleSubmit} className="form-task" >
-        <h2>Nueva Tarea</h2>
+        <div>
+          <h2>Nueva Tarea</h2>
+        </div>
+        <div>
+          {error && <MessageError
+            setError={setError}
+          />}
+        </div>
         <div className="campo">
           <label>Tarea</label>
           <input
@@ -49,6 +60,7 @@ const createTask = ({ setModal, tarea, setTarea }) => {
         </div>
 
         <input
+          className="btn-crear-tarea"
           type="submit"
           value="Enviar"
         />

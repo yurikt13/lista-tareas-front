@@ -35,23 +35,38 @@ body {
 
 .campo {
     margin-bottom: 1rem;
-    width: 70%;
+    height: 40%;
+    width: 100%;
 }
 
-.input-crear-tarea, .select-crear-tarea{
+.input-crear-tarea,
+.select-crear-tarea {
+    font-size: 20px;
     width: 100%;
-    border: solid #EBEAEA;
-    background-color: #EBEAEA;
+    height: 50%;
+    border-radius: 5px;
+    border: solid #ebeaea;
+    background-color: #ebeaea;
     display: flex;
     outline: none;
-    border:none;
+    border: none;
+}
 
+.btn-crear-tarea {
+    color: white;
+    width: 100%;
+    height: 50%;
+    background-color: rgb(133, 215, 133);
+    border: none;
+}
+.btn-crear-tarea:hover {
+    background-color: rgb(84, 187, 84);
 }
 
 
 .form-task {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     background-color: white;
     height: 90%;
     width: 50%;
@@ -59,6 +74,7 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 .container-app {
@@ -76,6 +92,7 @@ body {
 
 
 .container-menu {
+    width: 70%;
     padding: 20px;
     background-color: #EBEAEA;
 }
@@ -137,6 +154,18 @@ body {
     display: flex;
 }
 
+.container-create-task {
+    width: 93%;
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border: solid #EBEAEA;
+    background-color: #EBEAEA;
+    display: flex;
+}
+
 .input-create-task {
     background-color: white;
     margin-right: 10px;
@@ -146,6 +175,13 @@ body {
     border-radius: 10px;
     width: 97%;
     outline: none;
+}
+
+.title-task {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 17px;
+    width: 97%;
 }
 
 .container-icon-create-task {
@@ -196,4 +232,11 @@ body {
 .icon-task-false {
     font-size: 20px;
     color: red;
+}
+
+.error {
+    background-color: rgb(207, 71, 71);
+    color: white;
+    padding: 20px;
+    font-size: 20px;
 }
