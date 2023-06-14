@@ -33,17 +33,22 @@ body {
     width: 100%;
 }
 
+.icon-cerrar-modal {
+    height: 30px;
+}
+
 .campo {
-    margin-bottom: 1rem;
-    height: 40%;
+    margin-bottom: 3rem;
     width: 100%;
 }
 
 .input-crear-tarea,
 .select-crear-tarea {
-    font-size: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 15px;
     width: 100%;
-    height: 50%;
+    height: 30px;
     border-radius: 5px;
     border: solid #ebeaea;
     background-color: #ebeaea;
@@ -52,29 +57,39 @@ body {
     border: none;
 }
 
+.form-task {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    height: 80%;
+    width: 70vh;
+    padding: 30px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-nueva-tarea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+}
+
 .btn-crear-tarea {
+    font-size: 15px;
+    margin-bottom: 15px;
     color: white;
     width: 100%;
-    height: 50%;
+    height: 40px;
     background-color: rgb(133, 215, 133);
     border: none;
+    border-radius: 10px;
 }
+
 .btn-crear-tarea:hover {
     background-color: rgb(84, 187, 84);
-}
-
-
-.form-task {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    background-color: white;
-    height: 90%;
-    width: 50%;
-    padding: 5px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
+    border: none;
 }
 
 .container-app {
@@ -234,9 +249,20 @@ body {
     color: red;
 }
 
-.error {
+.conError {
+    height: 30%;
     background-color: rgb(207, 71, 71);
     color: white;
     padding: 20px;
     font-size: 20px;
+    visibility: visible;
+}
+
+.sinError {
+    height: 30%;
+    background-color: rgb(207, 71, 71);
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    visibility: hidden;
 }

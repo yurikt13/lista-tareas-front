@@ -10,30 +10,25 @@ const createTask = ({ setModal, tarea, setTarea }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (estado.includes != '') {
+    if (tarea === '' || estado === '') {
       setError(true)
     } else {
       setError(false)
     }
-
   }
 
   return ReactDOM.createPortal(
     <div className="modal">
       <div className="cerrar-modal">
         <img
+          className="icon-cerrar-modal"
           src={cerrarModal}
           onClick={() => setModal(false)}
         ></img>
       </div>
       <form onSubmit={handleSubmit} className="form-task" >
         <div>
-          <h2>Nueva Tarea</h2>
-        </div>
-        <div>
-          {error && <MessageError
-            setError={setError}
-          />}
+          <h2 className="title-nueva-tarea">Nueva Tarea</h2>
         </div>
         <div className="campo">
           <label>Tarea</label>
@@ -59,11 +54,16 @@ const createTask = ({ setModal, tarea, setTarea }) => {
           </select>
         </div>
 
-        <input
-          className="btn-crear-tarea"
-          type="submit"
-          value="Enviar"
-        />
+        <div>
+          <input
+            type="submit"
+            className="btn-crear-tarea"
+            value="Agregar"
+          />
+        </div>
+        <div>
+          {<MessageError error={error} />}
+        </div>
       </form>
     </div>, document.getElementById("modal")
   )

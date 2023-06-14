@@ -1,6 +1,6 @@
-const MessageError = ({ setError }) => {
+const MessageError = ({error}) => {
     return (
-        <div className={setError ? 'conError' : 'sinError'}>Todos los campos son obligatorios.</div >
+        <div className={error ? 'conError' : 'sinError'}>Todos los campos son obligatorios.</div >
     )
 }
 export default MessageError

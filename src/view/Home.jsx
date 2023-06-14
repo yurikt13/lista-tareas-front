@@ -14,7 +14,6 @@ const Home = () => {
         fetch("http://localhost:3000/")
             .then((response) => response.json())
             .then((responseData) => {
-                console.log(responseData)
                 setData(responseData)
             })
     }, []);
