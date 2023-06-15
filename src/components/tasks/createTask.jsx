@@ -3,18 +3,42 @@ import ReactDOM from "react-dom"
 import cerrarModal from "./img/cerrar.svg"
 import MessageError from "./messageError"
 
-const createTask = ({ setModal, tarea, setTarea }) => {
+const createTask = ({ setModal, name, setName }) => {
 
-  const [estado, setEstado] = useState('');
+  const [status, setStatus] = useState('');
   const [error, setError] = useState(false)
+  const [data, setData] = useState({ name: name, status: false })
+
+  const crearTarea = async () => {
+    console.log(data)
+    const valoresVacios = Object.values(data).find((name) => name === 0)
+
+    if (valoresVacios === '') {
+      console.log(valoresVacios)
+      return;
+    }
+
+    console.log(data)
+    await fetch('http://localhost:3000/crear', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    console.log(data)
+
+  }
 
   const handleSubmit = e => {
-    e.preventDefault();
-    if (tarea === '' || estado === '') {
-      setError(true)
-    } else {
+    if (data.name != '' && data.status != '') {
       setError(false)
+      crearTarea()
+    } else {
+      e.preventDefault()
+      setError(true)
     }
+
   }
 
   return ReactDOM.createPortal(
@@ -36,8 +60,8 @@ const createTask = ({ setModal, tarea, setTarea }) => {
             className="input-crear-tarea"
             id="name"
             type="text"
-            value={tarea}
-            onChange={e => setTarea(e.target.value)}
+            value={data.name}
+            onChange={e => setData({ ...data, name: e.target.value })}
           />
         </div>
         <div className="campo">
@@ -45,8 +69,8 @@ const createTask = ({ setModal, tarea, setTarea }) => {
           <select
             className="select-crear-tarea"
             id="status"
-            value={estado}
-            onChange={e => setEstado(e.target.value)}
+            value={data.status}
+            onChange={e => setData({ ...data, status: e.target.value })}
           >
             <option>--Seleccione--</option>
             <option value="true">Activa</option>

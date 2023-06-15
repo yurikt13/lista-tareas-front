@@ -7,7 +7,7 @@ import { GrStatusGoodSmall } from "react-icons/gr"
 const Home = () => {
 
     const [modal, setModal] = useState(false);
-    const [tarea, setTarea] = useState()
+    const [name, setName] = useState()
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const Home = () => {
             </div>
             <div className="container-task">
                 <div className="container-create-task">
-                    <input className="input-create-task" placeholder="Escribe una tarea" value={tarea} onChange={e => setTarea(e.target.value)} />
+                    <input className="input-create-task" placeholder="Escribe una tarea" value={name} onChange={e => setName(e.target.value)} />
                     <div className="container-icon-create-task">
                         <AiOutlinePlus className="icon-create-task" onClick={() => handleCrearTarea()} />
                     </div>
@@ -49,8 +49,8 @@ const Home = () => {
 
                     {modal && <CreateTask
                         setModal={setModal}
-                        tarea={tarea}
-                        setTarea={setTarea}
+                        name={name}
+                        setName={setName}
 
                     />}
                 </div>
